@@ -1,0 +1,88 @@
+body {
+    text-align: center;
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.navbar {
+    background-color: #FFF8B0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.navbar h2 {
+    margin: 0px;
+    color: #5F3037;
+    font-weight: bold;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.campo button {
+    background-color: #5F3037;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+.campo select {
+    height: 25px;
+}
+
+.campo input {
+    height: 18px;
+}
+
+.resultado {
+    background-color: #5F3037;
+    height: 100px;
+    width: 330px;
+    margin-top: 50px;
+    padding: 20px 50px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.resultado span {
+    color: #FFF8B0;
+}
+
+.container-img img {
+    width: 120px;
+    margin-top: 120px;
+}
+
+.titulo {
+    display: flex;
+}
+
+.titulo span {
+    color: #5F3037;
+}
+
+.titulo img {
+    height: 50px;
+}

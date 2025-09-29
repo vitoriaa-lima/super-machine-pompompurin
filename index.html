@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>SPTecher's Machine - Vitória</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <h2>POMPOMPURIN</h2>
+        <img src="https://www.pngall.com/wp-content/uploads/14/Pompompurin-PNG-Image-File.png">
+    </div>
+
+    <div class="container">
+
+        <div class="conteudo">
+
+            <div class="titulo-campo">
+                <div class="titulo">
+                    <img src="https://www.pngall.com/wp-content/uploads/14/Pompompurin-PNG-Image-File.png">
+                    <h1>Super Machine do <span>Pompompurin</span></h1>
+                    <img src="https://www.pngall.com/wp-content/uploads/14/Pompompurin-PNG-Image-File.png">
+                </div>
+
+                <div class="campo">
+                    <input type="text" placeholder="Insira o número" id="input_numero">
+
+                    <select id="select_base">
+                        <option value="10">Decimal</option>
+                        <option value="2">Binário</option>
+                        <option value="8">Octal</option>
+                        <option value="16">Hexadecimal</option>
+                        <option value="" selected disabled>Selecione a base</option>
+                    </select>
+
+                    <button onclick="converter()">Converter</button>
+                </div>
+            </div>
+
+            <div class="resultado" id="resultado">
+                <div>
+                    <b>Decimal: </b>
+                    <span id="demo1"></span>
+                </div>
+
+                <div>
+                    <b>Binário: </b>
+                    <span id="demo2"></span>
+                </div>
+
+                <div>
+                    <b>Octal: </b>
+                    <span id="demo3"></span>
+                </div>
+
+                <div>
+                    <b>Hexadecimal: </b>
+                    <span id="demo4"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-img">
+            <img src="https://www.pngmart.com/files/23/Pompompurin-PNG-Isolated-File.png">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function converter() {
+        var num = input_numero.value;
+        var base = Number(select_base.value);
+        var decimal = 0;
+
+        if (num == '' || base == '') {
+            alert('Pompompurin precisa de um número e uma base para te ajudar!')
+        } else {
+            if (base == 10) {
+                num = Number(num);
+
+                if (isNaN(num)) {
+                    alert('Pompompurin precisa de um número Decimal válido pra te ajudar!')
+                } else {
+                    demo1.innerHTML = num;
+                    demo2.innerHTML = num.toString(2);
+                    demo3.innerHTML = num.toString(8);
+                    demo4.innerHTML = num.toString(16);
+                }
+            } else if (base == 2) {
+
+                decimal = parseInt(num, 2);
+                demo1.innerHTML = decimal;
+                demo2.innerHTML = num;
+                demo3.innerHTML = decimal.toString(8);
+                demo4.innerHTML = decimal.toString(16);
+
+            } else if (base == 8) {
+                if (num.includes(8) || num.includes(9)) {
+                    alert('Pompompurin precisa de um número Octal válido para te ajudar!')
+                } else {
+                    decimal = parseInt(num, 8);
+                    demo1.innerHTML = decimal;
+                    demo2.innerHTML = decimal.toString(2);
+                    demo3.innerHTML = num;
+                    demo4.innerHTML = decimal.toString(16)
+                }
+            } else if (base == 16) {
+
+                decimal = parseInt(num, 16);
+                demo1.innerHTML = decimal;
+                demo2.innerHTML = decimal.toString(2);
+                demo3.innerHTML = decimal.toString(8);
+                demo4.innerHTML = num;
+                
+            }
+
+            input_numero.value = '';
+            select_base.value = '';
+        }
+
+
+    }
+
+</script>
